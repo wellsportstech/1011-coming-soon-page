@@ -1,0 +1,281 @@
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  background-color: rgb(237, 166, 166);
+}
+
+/* === Layout === */
+.main-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.left-half, .right-half {
+  flex: 1;
+  position: relative;
+}
+
+.left-half {
+  background-color: rgb(237, 166, 166);
+  padding: 60px 40px;
+}
+
+.right-half {
+  background-color: rgb(176, 215, 210);
+  padding: 20px;
+  position: relative;
+}
+
+/* === Text === */
+.text-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wotw-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+.journey-text {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+  line-height: 1.4;
+}
+
+.typewriter-line {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 2px solid black;
+}
+
+.typed-line {
+  width: auto;
+  border-right: none;
+  animation: none;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.green-text {
+  color: green;
+  font-size: larger;
+}
+
+/* === Logo === */
+.top-right-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+}
+
+/* === Social Icons === */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.social-links a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+}
+
+/* === Girls Image === */
+.girls-image-main {
+  position: absolute;
+  bottom: -68px;
+  left: 52%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.girls-image-main img {
+  max-height: 150vh;
+  width: auto;
+}
+
+/* === Bottom Controls (Email + Chat) === */
+.bottom-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  z-index: 200;
+}
+
+.bottom-controls .email-box {
+  display: flex;
+  gap: 10px;
+}
+
+.bottom-controls .email-box input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.bottom-controls .email-box button {
+  padding: 10px 15px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* === Chat Button === */
+.chat-toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+.chat-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/* === Chatbot === */
+.chatbot-container {
+  width: 300px;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+#chat-window {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chatbot-input-wrapper {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+#chat-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  flex: 1;
+  font-size: 14px;
+}
+
+.chatbot-container button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* === Chat Messages === */
+.chat-msg {
+  padding: 8px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  max-width: 80%;
+  word-wrap: break-word;
+  margin-bottom: 4px;
+}
+
+.chat-msg.user {
+  background-color: #dff0d8;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat-msg.bot {
+  background-color: #eef;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* === Chat Options === */
+.chat-options {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chat-option {
+  padding: 6px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.chat-option:hover {
+  background-color: #ffa20056;
+}
+
+.simple-links {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.simple-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+.simple-links a:hover {
+  text-decoration: underline;
+}
